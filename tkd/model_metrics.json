@@ -1,0 +1,32 @@
+{
+  "target": "next-month log return, compounded onto last observed price",
+  "holdout_months": 60,
+  "train_start": "2001-03-01",
+  "train_end": "2021-02-01",
+  "test_start": "2021-03-01",
+  "test_end": "2026-02-01",
+  "feature_count": 15,
+  "features": [
+    "lag_1",
+    "return_lag_1",
+    "return_lag_2",
+    "return_lag_3",
+    "return_lag_6",
+    "return_lag_12",
+    "return_mean_3",
+    "return_std_3",
+    "return_mean_6",
+    "return_std_6",
+    "return_mean_12",
+    "return_std_12",
+    "year_index",
+    "month_sin",
+    "month_cos"
+  ],
+  "model": "HistGradientBoostingRegressor (absolute error loss)",
+  "model_mae": 71.59975578417351,
+  "model_rmse": 104.83067586276158,
+  "naive_last_month_mae": 78.08899999999997,
+  "naive_last_month_rmse": 119.75373870294544,
+  "holdout_note": "One-step-ahead predictions; each row uses only prices observed before that month."
+}
